@@ -6,8 +6,11 @@ export const createDispatchers = <States, Getters, Mutations>(
   states: States,
   mutations: (_: States) => { getters: Getters; mutations: Mutations },
 ) => {
-  const v = new vue({ data: () => states })
-  return { states: v.$data as Readonly<States>, ...mutations(v.$data as States) }
+  const v = vue.observable(states)
+  return {
+    states: v as Readonly<States>,
+    ...mutations(v),
+  }
 }
 
 export const createStore = <States, Getters, Actions>({
