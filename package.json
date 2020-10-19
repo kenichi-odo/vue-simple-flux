@@ -22,7 +22,7 @@
     "vuex"
   ],
   "license": "MIT",
-  "module": "./module/index.js",
+  "module": "./module/src/index.js",
   "name": "vue-simple-flux",
   "repository": {
     "type": "git",
@@ -32,6 +32,6 @@
     "build": "rm -dfr ./module && tsc",
     "test": "jest"
   },
-  "types": "./lib/types/index.d.ts",
-  "version": "2.0.0"
+  "types": "./module/types/src/index.d.ts",
+  "version": "2.0.1"
 }
